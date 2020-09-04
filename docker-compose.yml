@@ -8,6 +8,15 @@ services:
     networks:
       - redis-microservices-network
     restart: always
+    
+ redisinsight:
+   image: redislabs/redisinsight
+   ports:
+     - 8001:8001
+   networks:
+     - redis-microservices-network
+   restart: always
+ 
 
   mysql-debezium-service:
     build:
